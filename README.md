@@ -11,9 +11,32 @@ This repository contains implementations of various algorithms, primarily focuse
 
 ## Getting Started
 
-1. Clone the repository: `git clone https://github.com/whats2000/Algorithm.git`
+```bash
+# Clone the repository
+git clone https://github.com/whats2000/Algorithm.git
+```
+
 2. Navigate to a category and run the implementations (e.g., Jupyter notebooks for Python-based algorithms).
 3. Use the data in `data/` for experiments.
+
+## Environment Setup
+
+This project uses `uv` for dependency management. To set up the environment:
+
+```bash
+# Install uv if not already installed
+pip install uv
+
+# Sync the environment
+uv sync
+
+# Activate the virtual environment (optional, for manual activation)
+# On Unix: source .venv/bin/activate
+# On Windows: .venv\Scripts\activate
+
+# Run Jupyter notebooks
+uv run jupyter notebook
+```
 
 ## Examples
 
