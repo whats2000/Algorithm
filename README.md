@@ -16,6 +16,9 @@ This repository contains implementations of various algorithms, primarily focuse
     ```bash
     # Clone the repository
     git clone https://github.com/whats2000/Algorithm.git
+
+    # Change into the project directory
+    cd Algorithm
     ```
 
 2. This project uses `uv` for dependency management. To set up the environment:
