@@ -83,6 +83,9 @@ def plot_gantt(sequence: List[int], processing_times: np.ndarray, release_dates:
     ax.grid(True, axis='x', alpha=0.3)
     ax.set_xlim(0, current_time * 1.05)
 
+    # Invert y-axis to have the first job at the top
+    ax.invert_yaxis()
+
     # Add legend (remove duplicates)
     handles, labels = ax.get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
