@@ -40,7 +40,7 @@ uv run jupyter notebook
 
 ## Examples
 
-- **Heuristic**: Ant Colony for shortest path approximation in `heuristic/ant_colony/shortest_path.ipynb`.
+- **Heuristic**: Ant Colony for Traveling Salesman Problem (TSP) approximation in `heuristic/ant_colony/traveling_salesman.ipynb`.
 - **Exact**: Branch and Bound implementations in `exact/branch_and_bound/`.
 
 ## Contributing
