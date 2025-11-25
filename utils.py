@@ -1,7 +1,9 @@
 import random
+from typing import List, Tuple
+
 import numpy as np
-from typing import List
 import matplotlib.pyplot as plt
+import networkx as nx
 
 
 def set_seed(seed: int) -> None:
@@ -92,4 +94,43 @@ def plot_gantt(sequence: List[int], processing_times: np.ndarray, release_dates:
     ax.legend(by_label.values(), by_label.keys(), loc='upper right')
 
     plt.tight_layout()
+    plt.show()
+
+
+def plot_graph(distances: np.ndarray) -> None:
+    """
+    Plots the graph from the distance matrix.
+
+    Args:
+        distances (np.ndarray): Distance matrix.
+    """
+    G = nx.from_numpy_array(distances)
+    plt.figure(figsize=(12, 8))
+    pos = nx.spring_layout(G)
+    nx.draw_networkx_nodes(G, pos)
+    nx.draw_networkx_labels(G, pos)
+    nx.draw_networkx_edges(G, pos, edge_color='gray')
+    plt.title('Graph')
+    plt.axis('off')
+    plt.show()
+
+
+def plot_shortest_path(distances: np.ndarray, path: List[Tuple[int, int]]) -> None:
+    """
+    Plots the graph with the given path highlighted.
+
+    Args:
+        distances (np.ndarray): Distance matrix.
+        path (List[Tuple[int, int]]): The path as a list of edges.
+    """
+    G = nx.from_numpy_array(distances)
+    plt.figure(figsize=(12, 8))
+    pos = nx.spring_layout(G)
+    nx.draw_networkx_nodes(G, pos)
+    nx.draw_networkx_labels(G, pos)
+    nx.draw_networkx_edges(G, pos, edge_color='gray')
+    nx.draw_networkx_edges(G, pos, edgelist=path, edge_color='red', width=2)
+    nx.draw_networkx_edge_labels(G, pos, edge_labels={(i, j): f"{distances[i][j]:.2f}" for i, j in path})
+    plt.title('Shortest Path')
+    plt.axis('off')
     plt.show()
