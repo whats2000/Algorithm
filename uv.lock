@@ -14,6 +14,7 @@ dependencies = [
     { name = "jupyter" },
     { name = "matplotlib" },
     { name = "networkx" },
+    { name = "notebook" },
     { name = "numpy" },
     { name = "pandas" },
 ]
@@ -23,6 +24,7 @@ requires-dist = [
     { name = "jupyter", specifier = ">=1.1.1" },
     { name = "matplotlib", specifier = ">=3.10.7" },
     { name = "networkx", specifier = ">=3.6" },
+    { name = "notebook", specifier = ">=7.5.0" },
     { name = "numpy", specifier = ">=2.3.5" },
     { name = "pandas", specifier = ">=2.3.3" },
 ]
